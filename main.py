@@ -1,3 +1,4 @@
+#Pgbgroup
 import re, os, random, asyncio, html,configparser,pyrogram, subprocess, requests, time, traceback, logging, telethon, csv, json, sys
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from asyncio.exceptions import TimeoutError
@@ -26,12 +27,12 @@ if not os.path.exists(f"Users/2056781888/phone.csv"):
    open(f"Users/2056781888/phone.csv","w")
 if not os.path.exists('data.csv'):
     open("data.csv","w")
-APP_ID = 
-API_HASH = ""
-BOT_TOKEN = "2060259776:AAHM69mDvRSl7sC522fRynAoG-VmijWN9Ys"
-UPDATES_CHANNEL = "InducedBots"
-OWNER= [1778272361,2056781888]
-PREMIUM=[1778272361,2056781888]
+APP_ID = "9914709"
+API_HASH = "b3e7cb5ef23aaa7eb618a63d62405e1d"
+BOT_TOKEN = "5347807921:AAHctyNcyFnRMBdg7FZVsOBc-iDqtwLCqtg"
+UPDATES_CHANNEL = "Pgbgroup"
+OWNER= [1629550450]
+PREMIUM=[1629550450]
 app = pyrogram.Client("app", api_id=APP_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 with open("data.csv", encoding='UTF-8') as f:
@@ -51,13 +52,13 @@ async def Subscribe(lel, message):
       try:
          user = await app.get_chat_member(update_channel, message.chat.id)
          if user.status == "kicked":
-            await app.send_message(chat_id=message.chat.id,text="Sorry Sir, You are Banned. Contact My [Support Group](https://t.me/InducedBotsSupport).", parse_mode="markdown", disable_web_page_preview=True)
+            await app.send_message(chat_id=message.chat.id,text="Sorry Sir, You are Banned. Contact My [Support Group](https://t.me/PgbgroupSupport).", parse_mode="markdown", disable_web_page_preview=True)
             return 1
       except UserNotParticipant:
          await app.send_message(chat_id=message.chat.id, text="**Please Join My Updates Channel To Use Me!\n and click on to Check /start**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🤖 Join Updates Channel 🤖", url=f"https://t.me/{update_channel}")]]), parse_mode="markdown")
          return 1
       except Exception:
-         await app.send_message(chat_id=message.chat.id, text="**Something Went Wrong. Contact My [Support Group](https://t.me/InducedBotsSupport).**", parse_mode="markdown", disable_web_page_preview=True)
+         await app.send_message(chat_id=message.chat.id, text="**Something Went Wrong. Contact My [Support Group](https://t.me/PgbgroupSupport).**", parse_mode="markdown", disable_web_page_preview=True)
          return 1
 
 
@@ -75,7 +76,7 @@ async def start(lel, message):
    user_name = '@' + message.from_user.username if message.from_user.username else None
    await add_user(id, user_name)
    but = InlineKeyboardMarkup([[InlineKeyboardButton("Login✅", callback_data="Login"), InlineKeyboardButton("Adding💯", callback_data="Adding") ],[InlineKeyboardButton("Phone⚙️", callback_data="Edit"), InlineKeyboardButton("PhoneSee💕", callback_data="Ish")],[InlineKeyboardButton("Phone Remove⚙️", callback_data="Remove"), InlineKeyboardButton("AdminPannel", callback_data="Admin")]])
-   await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm Induced Scraper Bot \nMade for doing Scraping for free,\nWithout Using Any Use of Python.\n\nMade with ❤️ By @InducedBots**", reply_markup=but)
+   await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm Induced Scraper Bot \nMade for doing Scraping for free,\nWithout Using Any Use of Python.\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
 
 
 
@@ -88,7 +89,7 @@ async def phone(lel, message):
    if a==1:
       return
    if message.from_user.id not in PREMIUM:
-      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @InducedBots**")
+      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @Pgbgroup**")
       return
    if not os.path.exists(f"Users/{message.from_user.id}/phone.csv"):
       os.mkdir(f'./Users/{message.from_user.id}')
@@ -100,26 +101,26 @@ async def phone(lel, message):
       for pphone in str_list:
          a+=1
          NonLimited.append(str(pphone))
-      number = await app.ask(chat_id=message.chat.id, text="**Enter number of accounts to Login (in intiger)\n\nMade with ❤️ By @InducedBots**")
+      number = await app.ask(chat_id=message.chat.id, text="**Enter number of accounts to Login (in intiger)\n\nMade with ❤️ By @Pgbgroup**")
       n = int(number.text)
       a+=n
       if n<1 :
-         await app.send_message(message.chat.id, """**Invalid Format less then 1 Try again\n\nMade with ❤️ By @InducedBots**""")
+         await app.send_message(message.chat.id, """**Invalid Format less then 1 Try again\n\nMade with ❤️ By @Pgbgroup**""")
          return
       if a>100:
-         await app.send_message(message.chat.id, f"**You can add only {100-a} Phone no \n\nMade with ❤️ By @InducedBots**")
+         await app.send_message(message.chat.id, f"**You can add only {100-a} Phone no \n\nMade with ❤️ By @Pgbgroup**")
          return
       for i in range (1,n+1):
-         number = await app.ask(chat_id=message.chat.id, text="**Now Send Your Telegram Account's Phone Number in International Format. \nIncluding **Country Code**. \nExample: **+14154566376 = 14154566376 only not +**\n\nMade with ❤️ By @InducedBots**")
+         number = await app.ask(chat_id=message.chat.id, text="**Now Send Your Telegram Account's Phone Number in International Format. \nIncluding **Country Code**. \nExample: **+14154566376 = 14154566376 only not +**\n\nMade with ❤️ By @Pgbgroup**")
          phone = number.text
          if "+" in phone:
-            await app.send_message(message.chat.id, """**As Mention + is not include\n\nMade with ❤️ By @InducedBots**""")
+            await app.send_message(message.chat.id, """**As Mention + is not include\n\nMade with ❤️ By @Pgbgroup**""")
          elif len(phone)==11 or len(phone)==12:
             Singla = str(phone)
             NonLimited.append(Singla)
-            await app.send_message(message.chat.id, f"**{n}). Phone: {phone} Set Sucessfully✅\n\nMade with ❤️ By @InducedBots**")
+            await app.send_message(message.chat.id, f"**{n}). Phone: {phone} Set Sucessfully✅\n\nMade with ❤️ By @Pgbgroup**")
          else:
-            await app.send_message(message.chat.id, """**Invalid Number Format Try again\n\nMade with ❤️ By @InducedBots**""") 
+            await app.send_message(message.chat.id, """**Invalid Number Format Try again\n\nMade with ❤️ By @Pgbgroup**""") 
       NonLimited=list(dict.fromkeys(NonLimited))
       with open(f"Users/{message.from_user.id}/1.csv", 'w', encoding='UTF-8') as writeFile:
          writer = csv.writer(writeFile, lineterminator="\n")
@@ -128,7 +129,7 @@ async def phone(lel, message):
          for line in infile:
             outfile.write(line.replace(",", ""))
  except Exception as e:
-   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @InducedBots**")
+   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
    return
 
 
@@ -142,7 +143,7 @@ async def login(lel, message):
    if a==1:
       return
    if message.from_user.id not in PREMIUM:
-      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @InducedBots**")
+      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @Pgbgroup**")
       return
    with open(f"Users/{message.from_user.id}/phone.csv", 'r')as f:
     r=[]
@@ -222,16 +223,16 @@ async def login(lel, message):
          stats='you are limited'
          l.append(str(phone))
       me = await client.get_me()
-      await app.send_message(message.chat.id, f"Login Successfully✅ Done.\n\n**Name:** {me.first_name}\n**Username:** {me.username}\n**Phone:** {phone}\n**SpamBot Stats:** {stats}\n\n**Made with ❤️ By @InducedBots**")     
+      await app.send_message(message.chat.id, f"Login Successfully✅ Done.\n\n**Name:** {me.first_name}\n**Username:** {me.username}\n**Phone:** {phone}\n**SpamBot Stats:** {stats}\n\n**Made with ❤️ By @Pgbgroup**")     
       po+=1
       await client.disconnect()
      except ConnectionError:
       await client.disconnect()
       await client.connect()
      except TypeError:
-      await app.send_message(message.chat.id, "**You have not enter the phone number \nplease edit Config⚙️ by camand /start.\n\nMade with ❤️ By @InducedBots**")  
+      await app.send_message(message.chat.id, "**You have not enter the phone number \nplease edit Config⚙️ by camand /start.\n\nMade with ❤️ By @Pgbgroup**")  
      except Exception as e:
-      await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @InducedBots**")
+      await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
     for ish in l:
       r.append(str(ish))
     with open(f"Users/{message.from_user.id}/1.csv", 'w', encoding='UTF-8') as writeFile:
@@ -240,9 +241,9 @@ async def login(lel, message):
     with open(f"Users/{message.from_user.id}/1.csv") as infile, open(f"Users/{message.from_user.id}/phone.csv", "w") as outfile:
       for line in infile:
          outfile.write(line.replace(",", "")) 
-    await app.send_message(message.chat.id, f"**All Acc Login {s} Account Available of {po} \n\nMade with ❤️ By @InducedBots**") 
+    await app.send_message(message.chat.id, f"**All Acc Login {s} Account Available of {po} \n\nMade with ❤️ By @Pgbgroup**") 
  except Exception as e:
-   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @InducedBots**")
+   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
    return
                           
 
@@ -255,13 +256,13 @@ async def to(lel, message):
    if a==1:
       return
    if message.from_user.id not in PREMIUM:
-      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @InducedBots**")
+      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @Pgbgroup**")
       return
-   number = await app.ask(chat_id=message.chat.id, text="**Now Send the From Group Username \n\nMade with ❤️ By @InducedBots**")
+   number = await app.ask(chat_id=message.chat.id, text="**Now Send the From Group Username \n\nMade with ❤️ By @Pgbgroup**")
    From = number.text
-   number = await app.ask(chat_id=message.chat.id, text="**Now Send the To Group Username \n\nMade with ❤️ By @InducedBots**")
+   number = await app.ask(chat_id=message.chat.id, text="**Now Send the To Group Username \n\nMade with ❤️ By @Pgbgroup**")
    To = number.text
-   number = await app.ask(chat_id=message.chat.id, text="**Now Send Start From  \n\nMade with ❤️ By @InducedBots**")
+   number = await app.ask(chat_id=message.chat.id, text="**Now Send Start From  \n\nMade with ❤️ By @Pgbgroup**")
    a = int(number.text)
    di=a
    try:
@@ -284,12 +285,12 @@ async def to(lel, message):
                      continue
                   if (ra-di)>150:
                      await client.disconnect()
-                     r+="**\nMade with ❤️ By @InducedBots**"
+                     r+="**\nMade with ❤️ By @Pgbgroup**"
                      await app.send_message(chat_id=message.chat.id, text=f"{r}")
-                     await app.send_message(message.chat.id, f"**Error: {phone} Due to Some Error Moving to Next no\n\nMade with ❤️ By @InducedBots**")
+                     await app.send_message(message.chat.id, f"**Error: {phone} Due to Some Error Moving to Next no\n\nMade with ❤️ By @Pgbgroup**")
                      break
                   if dad>40:
-                     r+="**\nMade with ❤️ By @InducedBots**"
+                     r+="**\nMade with ❤️ By @Pgbgroup**"
                      await app.send_message(chat_id=message.chat.id, text=f"{r}")
                      r="**Adding Start**\n\n"
                      dad=0
@@ -298,7 +299,7 @@ async def to(lel, message):
                except errors.FloodWaitError as s:
                   status= f'FloodWaitError for {s.seconds} sec'
                   await client.disconnect()
-                  r+="**\nMade with ❤️ By @InducedBots**"
+                  r+="**\nMade with ❤️ By @Pgbgroup**"
                   await app.send_message(chat_id=message.chat.id, text=f"{r}")
                   await app.send_message(chat_id=message.chat.id, text=f'**FloodWaitError for {s.seconds} sec\nMoving To Next Number**')
                   break
@@ -338,9 +339,9 @@ async def to(lel, message):
                dad+=1
                a+=1
    except Exception as e:
-      await app.send_message(chat_id=message.chat.id, text=f"Error: {e} \n\n Made with ❤️ By @InducedBots")
+      await app.send_message(chat_id=message.chat.id, text=f"Error: {e} \n\n Made with ❤️ By @Pgbgroup")
  except Exception as e:
-   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @InducedBots**")
+   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
    return
 
 
@@ -352,7 +353,7 @@ async def start(lel, message):
    if a==1:
       return
    if message.from_user.id not in PREMIUM:
-      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @InducedBots**")
+      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @Pgbgroup**")
       return
    try:
       with open(f"Users/{message.from_user.id}/phone.csv", 'r')as f:
@@ -364,12 +365,12 @@ async def start(lel, message):
             dad+=1
             da+=1
             if dad>40:
-               de+="**\nMade with ❤️ By @InducedBots**"
+               de+="**\nMade with ❤️ By @Pgbgroup**"
                await app.send_message(chat_id=message.chat.id, text=f"{de}")
                de="**Your Phone Numbers are**\n\n"
                dad=0 
             de+=(f"**{da}).** `{int(pphone)}`\n")
-         de+="**\nMade with ❤️ By @InducedBots**"
+         de+="**\nMade with ❤️ By @Pgbgroup**"
          await app.send_message(chat_id=message.chat.id, text=f"{de}")
 
    except Exception as a:
@@ -384,13 +385,13 @@ async def start(lel, message):
    if a==1:
       return
    if message.from_user.id not in PREMIUM:
-      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @InducedBots**")
+      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @InducedSellers\n\nMade with ❤️ By @Pgbgroup**")
       return
    try:
       with open(f"Users/{message.from_user.id}/phone.csv", 'r')as f:
          str_list = [row[0] for row in csv.reader(f)]
          f.closed
-         number = await app.ask(chat_id=message.chat.id, text="**Send Number to remove\n\nMade with ❤️ By @InducedBots**")
+         number = await app.ask(chat_id=message.chat.id, text="**Send Number to remove\n\nMade with ❤️ By @Pgbgroup**")
          print(str_list)
          str_list.remove(number.text)
          with open(f"Users/{message.from_user.id}/1.csv", 'w', encoding='UTF-8') as writeFile:
@@ -403,7 +404,7 @@ async def start(lel, message):
    except Exception as a:
       pass
  except Exception as e:
-   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @InducedBots**")
+   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
    return
 
 # ------------------------------- Admin Pannel --------------------------------- #
@@ -414,9 +415,9 @@ async def subscribers_count(lel, message):
       return
    if message.from_user.id in OWNER:
       but = InlineKeyboardMarkup([[InlineKeyboardButton("Users✅", callback_data="Users")], [InlineKeyboardButton("Broadcast💯", callback_data="Broadcast")],[InlineKeyboardButton("AddUser", callback_data="New")], [InlineKeyboardButton("Check Users", callback_data="Check")]])
-      await app.send_message(chat_id=message.chat.id,text=f"**Hi** `{message.from_user.first_name}` **!\n\nWelcome to Admin Pannel of Induced Bot\n\nMade with ❤️ By @InducedBots**", reply_markup=but)
+      await app.send_message(chat_id=message.chat.id,text=f"**Hi** `{message.from_user.first_name}` **!\n\nWelcome to Admin Pannel of Induced Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
    else:
-      await app.send_message(chat_id=message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @InducedBots**")
+      await app.send_message(chat_id=message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @Pgbgroup**")
 
 
 
@@ -426,22 +427,22 @@ async def button(app, update):
    k = update.data
    if "Login" in k:
       await update.message.delete()
-      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /login to login and check stats of Account.\n\nMade with ❤️ By @InducedBots**""") 
+      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /login to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Ish" in k:
       await update.message.delete()
-      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /phonesee to login and check stats of Account.\n\nMade with ❤️ By @InducedBots**""") 
+      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /phonesee to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Remove" in k:
       await update.message.delete()
-      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /remove to login and check stats of Account.\n\nMade with ❤️ By @InducedBots**""") 
+      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /remove to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Adding" in k:
       await update.message.delete()
-      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /adding to start adding from Login✅ Account.\n\nMade with ❤️ By @InducedBots**""") 
+      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /adding to start adding from Login✅ Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Edit" in k:
       await update.message.delete()
-      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /phone to login and check stats of Account.\n\nMade with ❤️ By @InducedBots**""") 
+      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /phone to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Home" in k:
       await update.message.delete()
-      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /start to Go Home.\n\nMade with ❤️ By @InducedBots**""") 
+      await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /start to Go Home.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Users" in k:
       await update.message.delete()
       msg = await app.send_message(update.message.chat.id,"Please Wait...")
@@ -449,7 +450,7 @@ async def button(app, update):
       await msg.edit(f"Total:\n\nUsers - {messages[0]}\nBlocked - {messages[1]}")
    elif "New" in k:
       await update.message.delete()
-      number = await app.ask(chat_id=update.message.chat.id, text="**Send User Id Of New User\n\nMade with ❤️ By @InducedBots**")
+      number = await app.ask(chat_id=update.message.chat.id, text="**Send User Id Of New User\n\nMade with ❤️ By @Pgbgroup**")
       phone = int(number.text)
       with open("data.csv", encoding='UTF-8') as f:
          rows = csv.reader(f, delimiter=",", lineterminator="\n")
@@ -479,22 +480,22 @@ async def button(app, update):
             if d<=r:
                a+=1
                E+=f"{a}). {row[1]} - {row[2]}\n"
-         E+="\n\n**Made with ❤️ By @InducedBots**"
+         E+="\n\n**Made with ❤️ By @Pgbgroup**"
          await app.send_message(chat_id=update.message.chat.id,text=E)
 
    elif "Admin" in k:
       await update.message.delete()
       if update.message.chat.id in OWNER:
          but = InlineKeyboardMarkup([[InlineKeyboardButton("Users✅", callback_data="Users")], [InlineKeyboardButton("Broadcast💯", callback_data="Broadcast")],[InlineKeyboardButton("AddUser", callback_data="New")], [InlineKeyboardButton("Check Users", callback_data="Check")]])
-         await app.send_message(chat_id=update.message.chat.id,text=f"**Welcome to Admin Pannel of Induced Bot\n\nMade with ❤️ By @InducedBots**", reply_markup=but)
+         await app.send_message(chat_id=update.message.chat.id,text=f"**Welcome to Admin Pannel of Induced Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
       else:
-         await app.send_message(chat_id=update.message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @InducedBots**")
+         await app.send_message(chat_id=update.message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @Pgbgroup**")
    elif "Broadcast" in k:
     try:
       query = await query_msg()
       a=0
       b=0
-      number = await app.ask(chat_id=update.message.chat.id, text="**Now me message For Broadcast\n\nMade with ❤️ By @InducedBots**")
+      number = await app.ask(chat_id=update.message.chat.id, text="**Now me message For Broadcast\n\nMade with ❤️ By @Pgbgroup**")
       phone = number.text
       for row in query:
          chat_id = int(row[0])
@@ -509,7 +510,7 @@ async def button(app, update):
             pass
       await app.send_message(update.message.chat.id,f"Successfully Broadcasted to {a} Chats\nFailed - {b} Chats !")
     except Exception as e:
-      await app.send_message(update.message.chat.id,f"**Error: {e}\n\nMade with ❤️ By @InducedBots**")
+      await app.send_message(update.message.chat.id,f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
 
 
 
@@ -518,7 +519,7 @@ text = """
 ╔════╗ㅤMembers 
 ╚═╗╔═╝ Scraping Bot
 ╔═╣╠═╗
-║╔╣╠╗║ㅤInduced
+║╔╣╠╗║ㅤPgbgroup
 ║╚╣╠╝║ Scraper Bot
 ╚═╣╠═╝
 ╔═╝╚═╗ 
