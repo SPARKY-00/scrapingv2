@@ -1,0 +1,34 @@
+{
+    "name": "Scraper Bot",
+    "description": "Made By Pgbgroup",
+    "keywords": [
+        "telegram",
+        "bot",
+        "plugin",
+        "modular",
+        "productivity",
+        "delete",
+        "channel",
+        "administrators",
+        "messages"
+    ],
+    "repository": "https://github.com/Pgbgroup/ScrapingBot-1.1v",
+    "website": "https://telegram.dog/SpEcHlDe",
+    "success_url": "https://t.me/SpEcHlDe/857",
+    "env": {
+           "TG_USER_SESSION": {
+            "description": "Create a PyroGram User Session, using https://generatestringsession.spechide.repl.run/"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
