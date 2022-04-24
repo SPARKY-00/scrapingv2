@@ -490,17 +490,17 @@ async def button(app, update):
          await app.send_message(chat_id=update.message.chat.id,text=f"**Welcome to Admin Pannel of Pgbgroup Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
       else:
          await app.send_message(chat_id=update.message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @Pgbgroup**")
-    
-  elif "remove" in k:
-  async def start(lel, message):
-  try:
-   a= await Subscribe(lel, message)
-   if a==1:
+            
+   elif "remove" in k:
+    async def start(lel, message):
+    try:
+     a= await Subscribe(lel, message)
+    if a==1:
       return
-   if message.from_user.id not in PREMIUM:
+    if message.from_user.id not in PREMIUM:
       await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @Pgbgrouphelper_bot\n\nMade with ❤️ By @Pgbgroup**")
       return
-   try:
+    try:
       with open(f"Users/{message.from_user.id}/phone.csv", 'r')as f:
          str_list = [row[0] for row in csv.reader(f)]
          f.closed
@@ -514,12 +514,12 @@ async def button(app, update):
             for line in infile:
                outfile.write(line.replace(",", ""))
          await app.send_message(chat_id=message.chat.id,text="Done SucessFully")
-   except Exception as a:
-      pass
- except Exception as e:
-   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
-   return
-   
+      except Exception as a:
+            pass
+      except Exception as e:
+         await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
+         return
+
    elif "Broadcast" in k:
     try:
       query = await query_msg()
