@@ -75,8 +75,8 @@ async def start(lel, message):
    id = message.from_user.id
    user_name = '@' + message.from_user.username if message.from_user.username else None
    await add_user(id, user_name)
-   but = InlineKeyboardMarkup([[InlineKeyboardButton("Login✅", callback_data="login"), InlineKeyboardButton("Adding 💯", callback_data="adding") ],[InlineKeyboardButton("Phone ⚙️", callback_data="phone"), InlineKeyboardButton("PhoneSee 💕", callback_data="phonesee")],[InlineKeyboardButton("Phone Remove ⚙️", callback_data="remove"), InlineKeyboardButton("AdminPannel", callback_data="Admin")]])
-   await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm Induced Scraper Bot \nMade for doing Scraping for free,\nWithout Using Any Use of Python.\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
+   but = InlineKeyboardMarkup([[InlineKeyboardButton("Login ✅", callback_data="login"), InlineKeyboardButton("Adding 💯", callback_data="adding") ],[InlineKeyboardButton("Phone ⚙️", callback_data="phone"), InlineKeyboardButton("PhoneSee 💕", callback_data="phonesee")],[InlineKeyboardButton("Phone Remove ⚙️", callback_data="remove"), InlineKeyboardButton("AdminPannel", callback_data="Admin")]])
+   await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm Pgbgroup Scraper Bot \nMade for doing Scraping for free,\nWithout Using Any Use of Python.\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
 
 
 
@@ -414,8 +414,8 @@ async def subscribers_count(lel, message):
    if a==1:
       return
    if message.from_user.id in OWNER:
-      but = InlineKeyboardMarkup([[InlineKeyboardButton("Users✅", callback_data="Users")], [InlineKeyboardButton("Broadcast💯", callback_data="Broadcast")],[InlineKeyboardButton("AddUser", callback_data="New")], [InlineKeyboardButton("Check Users", callback_data="Check")]])
-      await app.send_message(chat_id=message.chat.id,text=f"**Hi** `{message.from_user.first_name}` **!\n\nWelcome to Admin Pannel of Induced Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
+      but = InlineKeyboardMarkup([[InlineKeyboardButton("Users✅", callback_data="Users")], [InlineKeyboardButton("Broadcast 💯", callback_data="Broadcast")],[InlineKeyboardButton("AddUser", callback_data="New")], [InlineKeyboardButton("Check Users", callback_data="Check")]])
+      await app.send_message(chat_id=message.chat.id,text=f"**Hi** `{message.from_user.first_name}` **!\n\nWelcome to Admin Pannel of Pgbgroup Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
    else:
       await app.send_message(chat_id=message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @Pgbgroup**")
 
@@ -486,10 +486,40 @@ async def button(app, update):
    elif "Admin" in k:
       await update.message.delete()
       if update.message.chat.id in OWNER:
-         but = InlineKeyboardMarkup([[InlineKeyboardButton("Users✅", callback_data="Users")], [InlineKeyboardButton("Broadcast💯", callback_data="Broadcast")],[InlineKeyboardButton("AddUser", callback_data="New")], [InlineKeyboardButton("Check Users", callback_data="Check")]])
-         await app.send_message(chat_id=update.message.chat.id,text=f"**Welcome to Admin Pannel of Induced Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
+         but = InlineKeyboardMarkup([[InlineKeyboardButton("Users ✅", callback_data="Users")], [InlineKeyboardButton("Broadcast 💯", callback_data="Broadcast")],[InlineKeyboardButton("AddUser", callback_data="New")], [InlineKeyboardButton("Check Users", callback_data="Check")]])
+         await app.send_message(chat_id=update.message.chat.id,text=f"**Welcome to Admin Pannel of Pgbgroup Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
       else:
          await app.send_message(chat_id=update.message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @Pgbgroup**")
+    
+   elif "remove" in k:
+    async def start(lel, message):
+    try:
+   a= await Subscribe(lel, message)
+   if a==1:
+      return
+   if message.from_user.id not in PREMIUM:
+      await app.send_message(message.chat.id, f"**You are no Longer a Premium User\nPlease have a Subscripton\n200rs per Month\nDm @Pgbgrouphelper_bot\n\nMade with ❤️ By @Pgbgroup**")
+      return
+   try:
+      with open(f"Users/{message.from_user.id}/phone.csv", 'r')as f:
+         str_list = [row[0] for row in csv.reader(f)]
+         f.closed
+         number = await app.ask(chat_id=message.chat.id, text="**Send Number to remove\n\nMade with ❤️ By @Pgbgroup**")
+         print(str_list)
+         str_list.remove(number.text)
+         with open(f"Users/{message.from_user.id}/1.csv", 'w', encoding='UTF-8') as writeFile:
+            writer = csv.writer(writeFile, lineterminator="\n")
+            writer.writerows(str_list)
+         with open(f"Users/{message.from_user.id}/1.csv") as infile, open(f"Users/{message.from_user.id}/phone.csv", "w") as outfile:
+            for line in infile:
+               outfile.write(line.replace(",", ""))
+         await app.send_message(chat_id=message.chat.id,text="Done SucessFully")
+   except Exception as a:
+      pass
+   except Exception as e:
+   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @Pgbgroup**")
+   return
+   
    elif "Broadcast" in k:
     try:
       query = await query_msg()
@@ -526,5 +556,5 @@ text = """
 ╚════╝ 
 """
 print(text)
-print("Induced Adding Started Sucessfully........")
+print("Pgbgroup Adding Started Sucessfully........")
 app.run()
