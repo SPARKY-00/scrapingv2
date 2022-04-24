@@ -490,9 +490,6 @@ async def button(app, update):
          await app.send_message(chat_id=update.message.chat.id,text=f"**Welcome to Admin Pannel of Pgbgroup Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
       else:
          await app.send_message(chat_id=update.message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @Pgbgroup**")
-    
-   elif "remove" in k:
-    
    
    elif "Broadcast" in k:
     try:
