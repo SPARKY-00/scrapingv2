@@ -16,8 +16,8 @@
     "website": "https://telegram.dog/SpEcHlDe",
     "success_url": "https://t.me/SpEcHlDe/857",
     "env": {
-           "TG_USER_SESSION": {
-            "description": "Create a PyroGram User Session, using https://generatestringsession.spechide.repl.run/"
+           "Nothing": {
+            "description": "Type Nothing"
         }
     },
     "buildpacks": [
