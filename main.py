@@ -431,15 +431,19 @@ async def button(app, update):
       await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /login to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Ish" in k:
       await update.message.delete()
+      Bot.handleNextCommand("/phonesee") 
       await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /phonesee to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Remove" in k:
       await update.message.delete()
+      Bot.handleNextCommand("/remove") 
       await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /remove to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Adding" in k:
       await update.message.delete()
+      Bot.handleNextCommand("/adding") 
       await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /adding to start adding from Login✅ Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Edit" in k:
       await update.message.delete()
+      Bot.handleNextCommand("/phone")  
       await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /phone to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Home" in k:
       await update.message.delete()
