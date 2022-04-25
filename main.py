@@ -427,6 +427,7 @@ async def button(app, update):
    k = update.data
    if "Login" in k:
       await update.message.delete()
+      Bot.handleNextCommand("/login")
       await app.send_message(update.message.chat.id, """**There is nothing no more..!\nJust Click on /login to login and check stats of Account.\n\nMade with ❤️ By @Pgbgroup**""") 
    elif "Ish" in k:
       await update.message.delete()
